@@ -143,7 +143,7 @@ function resetAll() {
 }
 
 // Function to save task list data to local storage
-function savedata() {
+function saveData() {
   localStorage.setItem("data", listcontainer.innerHTML);
 }
 
