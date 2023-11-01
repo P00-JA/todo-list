@@ -4,7 +4,7 @@ let textInput = document.getElementById("textInput");
 let dateInput = document.getElementById("dateInput");
 let timeInput = document.getElementById("timeInput");
 let priorInput = document.getElementById("taskPriority");
-let listcontainer = document.getElementById("listcontainer");
+let listContainer = document.getElementById("listContainer");
 let storeData = [];
 
 // Function to open the task input form
@@ -29,9 +29,10 @@ function saveTask() {
 }
 
 // Function to create a new task and add it to the task list
-function createTasks(taskData) {
+function createTask(taskData) {
   const li = document.createElement("li");
   li.innerHTML = `${taskData.text}`;
+
   let detail = document.createElement("div");
   detail.className = 'detailsDrop';
   detail.id = 'dropDetail';
@@ -62,7 +63,8 @@ function createTasks(taskData) {
   let span = document.createElement("span");
   span.innerHTML = "X";
   li.appendChild(span);
-  listcontainer.appendChild(li);
+  listContainer.appendChild(li);
+  saveData();
   resetForm();
 }
 
@@ -72,28 +74,28 @@ function resetForm() {
   dateInput.value = "";
   timeInput.value = "";
   priorInput.value = '';
-  savedata();
+
 }
 
 // Event listener for task list container
-listcontainer.addEventListener("click", (e) => {
+listContainer.addEventListener("click", (e) => {
   if (e.target.tagName == "LI") {
     // Toggle task completion status
     e.target.classList.toggle("checked");
-    savedata();
+    saveData();
   } else if (e.target.tagName == "SPAN") {
     // Delete a task
     const confirmation = confirm('Do you really want to remove the task?');
     if (confirmation) {
       e.target.parentElement.remove();
       alert('Task successfully deleted!');
-      savedata();
+      saveData();
     }
   } else if (e.target.tagName === "I") {
     // Edit a task
     const li = e.target.parentElement;
     const taskData = {
-      text: li.innerText.split("viewX"),
+      text: li.innerText.split("viewX")[0],
       date: li.querySelector(".detailsDrop").innerText.split(" | ")[0],
       time: li.querySelector(".detailsDrop").innerText.split(" | ")[1],
       priority: li.querySelector(".detailsDrop").innerText.split(" | ")[2]
@@ -104,7 +106,7 @@ listcontainer.addEventListener("click", (e) => {
     priorInput.value = taskData.priority;
     openForm();
     li.remove();
-    savedata();
+    saveData();
   } else if (e.target.tagName === "BUTTON") {
     // Show/hide task details
     const li = e.target.closest("li");
@@ -127,7 +129,7 @@ function acceptData() {
   };
   storeData.push(taskData);
   storeData.sort((a, b) => new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time));
-  createTasks(taskData); // Call the createTask function with the data
+  createTask(taskData); // Call the createTask function with the data
   console.log(storeData);
 }
 
@@ -135,20 +137,36 @@ function acceptData() {
 function resetAll() {
   const confirmation = confirm('Do you really want to remove all the tasks?');
   if (confirmation) {
+    resetForm();
     localStorage.clear();
     window.location.reload();
     alert('Successfully deleted all the tasks!');
-    savedata();
+    saveData();
   }
 }
 
 // Function to save task list data to local storage
-function savedata() {
-  localStorage.setItem("data", listcontainer.innerHTML);
+function saveData() {
+  localStorage.setItem("data", JSON.stringify(storeData));
 }
 
 // Function to load and display task list data from local storage
 function showTask() {
-   listcontainer.innerHTML = localStorage.getItem("data");
+  let storedData = localStorage.getItem("data");
+  if (storedData) {
+    storeData = JSON.parse(storedData);
+    recreateTaskList();
+  }
 }
+
+// Function to recreate task list based on stored data
+function recreateTaskList() {
+  listContainer.innerHTML = "";
+  for (const taskData of storeData) {
+    createTask(taskData);
+  }
+}
+
 showTask(); // Load and display task list data when the page loads
+
+
