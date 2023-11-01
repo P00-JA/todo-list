@@ -4,7 +4,7 @@ let textInput = document.getElementById("textInput");
 let dateInput = document.getElementById("dateInput");
 let timeInput = document.getElementById("timeInput");
 let priorInput = document.getElementById("taskPriority");
-let listcontainer = document.getElementById("listcontainer");
+let listContainer = document.getElementById("listContainer");
 let storeData = [];
 
 // Function to open the task input form
@@ -62,7 +62,7 @@ function createTasks(taskData) {
   let span = document.createElement("span");
   span.innerHTML = "X";
   li.appendChild(span);
-  listcontainer.appendChild(li);
+  listContainer.appendChild(li);
   resetForm();
 }
 
@@ -72,22 +72,22 @@ function resetForm() {
   dateInput.value = "";
   timeInput.value = "";
   priorInput.value = '';
-  savedata();
+  saveData();
 }
 
 // Event listener for task list container
-listcontainer.addEventListener("click", (e) => {
+listContainer.addEventListener("click", (e) => {
   if (e.target.tagName == "LI") {
     // Toggle task completion status
     e.target.classList.toggle("checked");
-    savedata();
+    saveData();
   } else if (e.target.tagName == "SPAN") {
     // Delete a task
     const confirmation = confirm('Do you really want to remove the task?');
     if (confirmation) {
       e.target.parentElement.remove();
       alert('Task successfully deleted!');
-      savedata();
+      saveData();
     }
   } else if (e.target.tagName === "I") {
     // Edit a task
@@ -104,7 +104,7 @@ listcontainer.addEventListener("click", (e) => {
     priorInput.value = taskData.priority;
     openForm();
     li.remove();
-    savedata();
+    saveData();
   } else if (e.target.tagName === "BUTTON") {
     // Show/hide task details
     const li = e.target.closest("li");
@@ -138,7 +138,7 @@ function resetAll() {
     localStorage.clear();
     window.location.reload();
     alert('Successfully deleted all the tasks!');
-    savedata();
+    saveData();
   }
 }
 
