@@ -2,12 +2,13 @@
 A To-do list that intakes tasks as list elements using HTML,CSS and Javascript
 
 # To-do list images
-![Screenshot from 2023-11-01 00-09-54](https://github.com/P00-JA/todoList/assets/148937443/b510ba3d-5bdb-4e34-a151-ccdbd227be7d)
-![Screenshot from 2023-11-01 11-46-06](https://github.com/P00-JA/todoList/assets/148937443/54b5df6e-d6a9-4a1f-840f-7c575a9295f8)
+![Screenshot from 2023-11-01 11-45-10](https://github.com/P00-JA/todo-list/assets/148937443/80fcfb20-174d-40c7-a620-aa3f98dbf416)
+![Screenshot from 2023-11-01 11-46-06](https://github.com/P00-JA/todo-list/assets/148937443/9863c029-ccc3-4147-988b-fd4259625877)
 
 
 # To-do list demo video
-[Todolist.webm](https://github.com/P00-JA/todoList/assets/148937443/b739eacc-a175-47cd-bdbc-60949c860197)
+[Todolist.webm](https://github.com/P00-JA/todo-list/assets/148937443/2397e06d-1984-4bc7-b5f7-05754e83de62)
+
 
 # Features
  - Add task button
@@ -28,4 +29,4 @@ A To-do list that intakes tasks as list elements using HTML,CSS and Javascript
  - Reset all button clears local storage and refresh the window.
 # How to run
 - open the files in VS code
-- run the todoList.html with local server.
+- run the index.html with local server.
