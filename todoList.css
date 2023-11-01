@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Fuzzy+Bubbles:wght@700&family=Londrina+Shadow&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Londrina+Shadow&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Fuzzy+Bubbles:wght@700&family=Londrina+Shadow&family=Monoton&family=Playpen+Sans&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    
+    
+}
+
+.container{
+    width: 100%;
+    min-height:100vh ;
+    background: linear-gradient(160deg,#fafaf9,#fcf8fb)
+}
+.nav1{
+    position: relative;
+    min-width:390px ;
+    height: 35vh;
+    width: auto;
+    background-image: url(assets/bghead.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position-x: center;
+    box-shadow: inset 5px -5px 12px rgba(17, 17, 17, 0.3);
+    
+
+}
+.img1{
+    position: absolute;
+    top: 13vh;
+    left: 20vh;
+    width: 10rem;
+    rotate: 20deg;
+    
+}
+h1{
+    position: absolute;
+    left: 40vh;
+    top: 18vh;
+    font-family: 'Fuzzy Bubbles', sans-serif;
+    font-family: 'Londrina Shadow', sans-serif;
+    font-family: 'Monoton', sans-serif;
+    font-size: 4.5rem;
+    background: -webkit-linear-gradient(#f0257a, #cd80f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.nav2{
+    position: relative;
+    padding: 10px 10px;
+    min-width:390px ;
+    height: 10vh;
+    width: auto;
+    background:linear-gradient(#f67caf, #d196f3);
+   
+}
+.mytask{
+    position: relative;
+    padding-left: 15px;
+    padding-top: 5px;
+    font-family: 'Cedarville Cursive', cursive;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 3rem;
+    text-shadow: 4px 2px #4a4948;
+}
+.todoadder {
+    position: absolute;
+    right:40px;
+    top:20px;
+    border:none;
+    outline: none;
+    width: 30vh;
+    padding: 20px 60px;
+    background:#f6d23f;
+    color: rgb(57, 56, 56);
+    border-radius:40px ;
+    box-shadow: inset -5px -5px 12px #7e6d28,
+                       5px 5px 12px #927c24;
+    text-align:center;
+    font-family: 'Playpen Sans', cursive;
+    text-shadow: -1px 2px #928678;
+    font-size: 20px;
+    font-weight:bolder;
+    cursor: pointer;
+}
+.todoadder:hover{
+    background-color: #ffcd04;
+    box-shadow: inset -5px -5px 12px #846a03,
+                       5px 5px 12px #b69101;
+    
+
+}
+.reset{
+    position: absolute;
+    right:40vh;
+    top:20px;
+    border:none;
+    outline: none;
+    width: 30vh;
+    padding: 20px 60px;
+    background:#f6d23f;
+    color: rgb(57, 56, 56);
+    border-radius:40px ;
+    box-shadow: inset -5px -5px 12px #7e6d28,
+                       5px 5px 12px #927c24;
+    text-align:center;
+    font-family: 'Playpen Sans', cursive;
+    letter-spacing: 3px;
+    text-shadow: -1px 2px #928678;
+    font-size: 20px;
+    font-weight:bolder;
+    cursor: pointer;
+}
+/* Pop up form */
+.taskform{
+    display:none;
+    top:100px;
+    margin: 3vh 70vh;
+    padding: 20px 30px;
+    height: 35rem;
+    background-color: rgb(245, 228, 154);
+    border-radius: 35px;
+    position: fixed; /* Stay in place */
+    z-index: 1;
+    box-shadow: 5px 5px 12px #4a4948; 
+    overflow: scroll;
+    
+}
+.taskform{
+    font-family: 'Playpen Sans', cursive;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+     animation-name: animatetop;
+     animation-duration: 0.4s
+}
+.formHeader{
+    margin: 10px 90px;
+    padding: 5px 0px;
+}
+@-webkit-keyframes animatetop {
+    from {bottom:-300px; opacity:0} 
+    to {bottom:0; opacity:1}
+  }
+  
+@keyframes animatetop {
+    from {top:300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+.formTitle{
+    position: relative;
+    font-size: xx-large;
+    font-family: 'Fuzzy Bubbles', sans-serif;
+    color: #f2bd1d;
+    text-shadow: 4px 3px #4a4948;
+}
+.close{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #f9f9f9;
+    font-weight: bolder;
+    font-size: x-large;
+    font-family: 'Fuzzy Bubbles', sans-serif;
+    text-shadow: 4px 0px #5b5958;
+
+}
+.close:hover{
+    color: #f9d508;
+}
+.form-control{
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(245, 160, 235);
+    border-radius: 30px;
+    box-shadow: inset 5px 5px 12px #4a2649,
+                       -5px  -5px 12px #d5b1d4 ;
+   height: 2.5rem;
+   width: 20rem;
+   padding-left: 10px;
+}
+.saveData{
+    position: absolute;
+    right:12vh;
+    top:52vh;
+    border:none;
+    outline: none;
+    width: 20vh;
+    padding: 10px 60px;
+    background:#f6d23f;
+    color: rgb(57, 56, 56);
+    border-radius:40px ;
+    box-shadow: inset -5px -5px 12px #7e6d28,
+                       5px 5px 12px #927c24;
+    text-align:center;
+    font-family: 'Playpen Sans', cursive;
+    text-shadow: -1px 2px #928678;
+    font-size: 20px;
+    font-weight:bolder;
+    cursor: pointer;
+}
+.saveData:hover{
+    background:#f57bd5;
+    color: rgb(255, 255, 255);
+    box-shadow: inset -5px -5px 12px #70706f,
+                       5px 5px 12px #1c1c1b;
+
+}
+.tasks{
+    margin-left: 60px;
+    margin-bottom: 20px;
+    margin-right: 18px;
+    margin-top: 25px;
+    padding-right: 15px;
+    min-height: 200px;
+    overflow-y: hidden;
+}
+.tasks{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.tasks::-webkit-scrollbar{
+    width:5px;
+}
+.tasks::-webkit-scrollbar-track{
+    box-shadow: inset 2px 2px 10px rgba(199, 199, 199, 0.8);
+    border-radius: 10px;
+}
+.tasks::-webkit-scrollbar-thumb {
+    background:#5a5a5a;
+    border-radius: 10px;
+}
+.tasks::-webkit-scrollbar-thumb:hover{
+    background: hsl(316, 100%, 77%);
+}
+ul li{
+    
+    background-color: rgba(171, 172, 166, 0.5);
+    list-style: none;
+    font-family:'Playpen Sans', cursive; 
+    font-size: xx-large;
+    padding: 20px 20px 30px 75px;
+    margin-bottom: 20px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 30px;
+    
+}
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width:  50px;
+    border-radius: 50%;
+    background-image: url(assets/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 2.2vh;
+    left: 10px;
+    
+}
+ul li.checked{
+    color: rgb(105, 103, 103);
+    text-decoration: line-through;
+
+}
+ul li.checked::before{
+    background-image:url(assets/checkboxpink.avif) ;
+}
+ul li span{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-weight: bold;
+    color: #676464;
+                       
+}
+ul li span:hover{
+    color: #fb295d;
+    text-shadow: 3px 3px 12px rgba(115, 19, 47, 0.7);
+}
+ul li i{
+    position: absolute;
+    right: 120px;
+    top: 35px;
+    font-weight: bold;
+    color: #676464;
+}
+ul li i:hover{
+    color: #460861;
+    text-shadow: 3px 3px 12px rgba(115, 19, 47, 0.7);
+}
+.detailsDrop{
+  display: none;
+}
+
+.view-button {
+    position: absolute;
+    right: 200px;
+    top: 10px;
+    border: none;
+    outline: none;
+    width:5rem;
+    height: 3rem;
+    color: #1e1d1d;
+    background-color: #07b39f;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow:inset -5px -5px 12px rgb(66, 65, 65),
+                     5px 5px 12px rgb(57, 57, 57);
+  }
+.view-button:hover{
+    color: #121112;
+    background-color: #f981bb;
+    box-shadow:inset -5px -5px 12px rgb(77, 77, 77),
+                     5px 5px 12px rgb(23, 23, 23);
+  }
+.success{
+    display:none;
+    top:200px;
+    margin: 3vh 70vh;
+    padding: 20px 30px;
+    height: 20rem;
+    width: 20rem;
+    background-color: rgba(245, 228, 154,0.5);
+    border-radius: 35px;
+    position: fixed; /* Stay in place */
+    z-index: 1;
+    box-shadow: 5px 5px 12px #4a4948; 
+    overflow: scroll;
+  }

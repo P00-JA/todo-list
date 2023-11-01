@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="notepad.png" type="image/gif" sizes="30x30"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="todoList.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav1">
+            <img src="assets/notepad.png" class="img1">
+            <h1>Task Planner</h1>
+        </nav>
+        <div class="nav2">
+            <div class="mytask">My Task's</div>
+            <button class="reset" id="resetAll" onclick="resetAll()">RESET</button>
+
+            <button class="todoadder" id="newtask" onclick="openForm()">ADD NEW TASK</button>
+    
+        </div>
+        <!-- Popup Add form -->
+    <div class="bgclr">
+    <form class="taskform" id="popupForm">
+          <div class="formContent">
+            <div class="formHeader">
+              <h4 class="formTitle" id="Label">Task Adder</h5>
+              <button type="button" class="close" onclick="closeForm()">X</button>
+            </div>
+            <div class="formBody">
+              <p>Task Title</p>
+              <input type="text" class="form-control" name="" id="textInput" required>
+              <br>
+              <p>Due Date</p>
+              <input type="date" class="form-control" name="" id="dateInput" required>
+              <br><br>
+              <p>Due Time</p>
+              <input type="time" class="form-control" name="" id="timeInput" required>
+              <br><br>
+              <p>Priority</p>
+              <select name="" id="taskPriority" class="form-control" required>
+                <option value="Choose" disabled >Choose...</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div><br>
+            <div class="form-footer">
+              
+              <button type="submit" id="save" class="saveData" onclick="saveTask()">Save</button>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="tasks" >
+      <ul id="listcontainer">
+        
+      </ul>
+        
+    </div>
+        
+    </div>
+
+    
+    <script src="todoList.js"></script>
+</body>
+</html>
