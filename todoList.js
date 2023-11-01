@@ -63,8 +63,7 @@ function createTask(taskData) {
   let span = document.createElement("span");
   span.innerHTML = "X";
   li.appendChild(span);
-  listContainer.appendChild(li);
-  saveData();
+  listcontainer.appendChild(li);
   resetForm();
 }
 
@@ -74,7 +73,7 @@ function resetForm() {
   dateInput.value = "";
   timeInput.value = "";
   priorInput.value = '';
-
+  savedata();
 }
 
 // Event listener for task list container
@@ -146,8 +145,8 @@ function resetAll() {
 }
 
 // Function to save task list data to local storage
-function saveData() {
-  localStorage.setItem("data", JSON.stringify(storeData));
+function savedata() {
+  localStorage.setItem("data", listcontainer.innerHTML);
 }
 
 // Function to load and display task list data from local storage
