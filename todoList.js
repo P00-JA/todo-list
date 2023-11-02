@@ -63,7 +63,7 @@ function createTask(taskData) {
   let span = document.createElement("span");
   span.innerHTML = "X";
   li.appendChild(span);
-  listcontainer.appendChild(li);
+  listContainer.appendChild(li);
   resetForm();
 }
 
@@ -73,7 +73,7 @@ function resetForm() {
   dateInput.value = "";
   timeInput.value = "";
   priorInput.value = '';
-  savedata();
+  
 }
 
 // Event listener for task list container
@@ -94,7 +94,7 @@ listContainer.addEventListener("click", (e) => {
     // Edit a task
     const li = e.target.parentElement;
     const taskData = {
-      text: li.innerText.split("viewX")[0],
+      text: li.innerText.split("viewX"),
       date: li.querySelector(".detailsDrop").innerText.split(" | ")[0],
       time: li.querySelector(".detailsDrop").innerText.split(" | ")[1],
       priority: li.querySelector(".detailsDrop").innerText.split(" | ")[2]
@@ -145,8 +145,8 @@ function resetAll() {
 }
 
 // Function to save task list data to local storage
-function savedata() {
-  localStorage.setItem("data", listcontainer.innerHTML);
+function saveData() {
+  localStorage.setItem("data", JSON.stringify(storeData));
 }
 
 // Function to load and display task list data from local storage
@@ -167,5 +167,6 @@ function recreateTaskList() {
 }
 
 showTask(); // Load and display task list data when the page loads
+
 
 
