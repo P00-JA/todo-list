@@ -19,7 +19,9 @@
         <div class="nav2">
             <div class="mytask">My Task's</div>
             <button class="reset" id="resetAll" onclick="resetAll()">RESET</button>
+
             <button class="todoadder" id="newtask" onclick="openForm()">ADD NEW TASK</button>
+    
         </div>
         <!-- Popup Add form -->
     <div class="bgclr">
@@ -48,19 +50,58 @@
               </select>
             </div><br>
             <div class="form-footer">
+              
               <button type="submit" id="save" class="saveData" onclick="saveTask()">Save</button>
             </div>
           </div>
       </form>
     </div>
-    <div class="tasks" >
+    <form class="editForm" id="editPopupForm">
+      <div class="formContent">
+        <div class="formHeader">
+          <h4 class="formTitle" id="Label">Task Editor</h5>
+          <button type="button" class="close" onclick="closeEditForm()">X</button>
+        </div>
+        <div class="formBody">
+          <p>Task Title</p>
+          <input type="text" class="form-control" name="" id="editTextInput" required>
+          <br>
+          <p>Due Date</p>
+          <input type="date" class="form-control" name="" id="editDateInput" required>
+          <br><br>
+          <p>Due Time</p>
+          <input type="time" class="form-control" name="" id="editTimeInput" required>
+          <br><br>
+          <p>Priority</p>
+          <select name="" id="editTaskPriority" class="form-control" required>
+            <option value="Choose" disabled >Choose...</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div><br>
+        <div class="form-footer">
+          <button type="button" id="edit" class="editData">Edit</button>
+        </div>
+      </div>
+  </form>
+    <div class="tasks">
+    
       <ul id="listContainer">
-        
-      </ul>
-        
+        <!-- <li class="checked">Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+        <li>Task 4</li>-->
+       </ul>
     </div>
         
     </div>
+    <div class="success" ><button type="button" class="close" onclick="closeForm()">X</button></div> 
+
+            
+        
+      
+    
     <script src="todoList.js"></script>
 </body>
 </html>
